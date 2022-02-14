@@ -1,41 +1,22 @@
 #include "bitset.h"
 
 int main() {
-    bitset_t *a = bitset_create(9);
+    bitset_t *a = bitset_create(17);
 
     puts("Print a:");
     bitset_print(a);
-    putchar('\n');
 
-    bitset_set(a, 2);
-    puts("Print a(set 2):");
+    puts("Print a(1234):");
+    bitset_set16(a, 1234);
     bitset_print(a);
-    putchar('\n');
 
-    bitset_set(a, 4);
-    puts("Print a(set 4):");
+    bitset_shl(a, 10);
+    puts("Print a(shl 10):");
     bitset_print(a);
-    putchar('\n');
 
-    bitset_toggle(a, 4);
-    puts("Print a(toggle 4):");
+    bitset_shr(a, 10);
+    puts("Print a(shr 10):");
     bitset_print(a);
-    putchar('\n');
-
-    bitset_toggle(a, 4);
-    puts("Print a(toggle 4):");
-    bitset_print(a);
-    putchar('\n');
-
-    bitset_unset(a, 2);
-    puts("Print a(unset 2):");
-    bitset_print(a);
-    putchar('\n');
-
-    bitset_toggle(a, 8);
-    puts("Print a(toggle 8):");
-    bitset_print(a);
-    putchar('\n');
 
     bitset_destroy(a);
 
